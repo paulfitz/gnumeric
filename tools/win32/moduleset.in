@@ -391,7 +391,7 @@
     </autotools>
 
     <autotools id="goffice">
-	<branch/>
+	<branch tag="GOFFICE_0_10_18"/>
 	<dependencies>
 	    <dep package="glib"/>
 	    <dep package="libgsf"/>
@@ -405,7 +405,7 @@
 	</dependencies>
     </autotools>
     <autotools id="gnumeric">
-	<branch/>
+	<branch tag="GNUMERIC_1_12_18"/>
 	<dependencies>
 	    <dep package="goffice"/>
 	</dependencies>
