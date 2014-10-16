@@ -58,6 +58,18 @@ setup_html_help() {
     wine regsvr32 /s 'C:\WINDOWS\SYSTEM32\itss.dll'
 }
 
+tweak_wine_path() {
+    wine regedit.exe /E ${builddir}/path.reg "HKEY_CURRENT_USER\Environment"
+    grep -v -i "PATH.=" ${builddir}/path.reg > ${builddir}/path_clean.reg
+    winepath -w "${JH_PREFIX}/deploy/bin" > ${builddir}/path.txt
+    sed -i "s|\\\\|\\\\\\\\|g" ${builddir}/path.txt
+    sed -i 's|.*|"PATH"="\0"|' ${builddir}/path.txt
+    cat ${builddir}/path.txt >> ${builddir}/path_clean.reg
+    cat ${builddir}/path_clean.reg
+    wine regedit.exe /S ${builddir}/path_clean.reg
+    rm -f ${builddir}/path_clean.reg ${builddir}/path.reg ${builddir}/path.txt
+}
+
 # Setup up the JH_PREFIX/deploy
     build_mkdir "${JH_PREFIX}/deploy" ; cd "${JH_PREFIX}/deploy"
     build_mkdir "bin"
@@ -94,6 +106,9 @@ setup_html_help() {
     if [ ! -d "${WINEDIR}/Program Files (x86)/HTML Help Workshop" ]; then
 	( setup_html_help )
     fi
+
+# Make sure libraries end up in path, for some poorly written probe programs
+    tweak_wine_path
 
 # example usage:
 #	make debug
