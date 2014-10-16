@@ -162,7 +162,7 @@ module_autogenargs['pxlib']	= autogenargs + """ --with-gsf=""" + prefix
 module_autogenargs['libglade']	= autogenargs
 module_autogenargs['pygobject']	= autogenargs + """ --without-ffi --without-gio-unix"""
 module_autogenargs['libgsf']	= autogenargs + """ --disable-introspection --enable-compile-warnings=minimum"""
-module_autogenargs['goffice']	= autogenargs + """ --without-gconf --with-gmathml --without-long-double"""
+module_autogenargs['goffice']	= autogenargs + """ --without-gconf --with-gmathml --without-long-double --enable-compile-warnings=minimum"""
 module_autogenargs['gnumeric']	= autogenargs + """ --disable-component --without-perl"""
 module_autogenargs['poppler']	= autogenargs + """ --disable-cms"""
 module_autogenargs['evince']	= autogenargs + """ --without-gconf --without-keyring"""
