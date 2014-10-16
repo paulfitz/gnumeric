@@ -173,8 +173,8 @@
     </autotools>
     <autotools id="libthai">
 	<branch repo="debian"
-		module="libt/libthai/libthai_0.1.19.orig.tar.xz"
-		version="0.1.19" checkoutdir="libthai-0.1.19">
+		module="libt/libthai/libthai_0.1.21.orig.tar.xz"
+		version="0.1.21" checkoutdir="libthai-0.1.21">
 	    <patch file="&patch_dir;libthai.patch"/>
 	</branch>
 	<dependencies>
