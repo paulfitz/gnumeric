@@ -106,6 +106,9 @@ tweak_wine_path() {
     if [ ! -d "${WINEDIR}/Program Files (x86)/HTML Help Workshop" ]; then
 	( setup_html_help )
     fi
+    if [ ! -d "${WINEDIR}/Program Files/HTML Help Workshop" ]; then
+	cp -r "${WINEDIR}/Program Files (x86)/HTML Help Workshop" "${WINEDIR}/Program Files/HTML Help Workshop"
+    fi
 
 # Make sure libraries end up in path, for some poorly written probe programs
     tweak_wine_path
