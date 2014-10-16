@@ -165,8 +165,8 @@
     </tarball>
     <autotools id="libdatrie">
 	<branch repo="debian"
-		module="libd/libdatrie/libdatrie_0.2.6.orig.tar.xz"
-		version="0.2.6" checkoutdir="libdatrie-0.2.6"/>
+		module="libd/libdatrie/libdatrie_0.2.8.orig.tar.xz"
+		version="0.2.8" checkoutdir="libdatrie-0.2.8"/>
 	<dependencies>
 	    <dep package="iconv"/>
 	</dependencies>
