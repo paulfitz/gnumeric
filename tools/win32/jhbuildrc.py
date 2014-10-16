@@ -149,7 +149,7 @@ module_autogenargs['psiconv']	= autogenargs + """ --disable-xhtml-docs \
 						    --without-imagemagick"""
 
 module_autogenargs['libxml2']	= autogenargs + """ --disable-scrollkeeper --without-iconv --without-python"""
-module_autogenargs['libxslt']	= autogenargs + """ --without-crypto"""
+module_autogenargs['libxslt']	= autogenargs + """ --without-crypto --without-python"""
 
 autogenargs += """ --disable-scrollkeeper --disable-gtk-doc"""
 
